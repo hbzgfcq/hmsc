@@ -1,0 +1,22 @@
+<view class="tabs">
+    <view class="tabs_title">
+        <!--
+            wx:for index item
+            组件的自定义属性：data-*
+            访问组件的自定义属性集合：e.currentTarget.dataset
+        -->
+        <view
+        wx:for="{{tabs}}"
+        wx:key="id"
+        class="title_item {{item.isActive?'active':''}}"
+        bind:tap="handleItemTap" 
+        data-index="{{index}}"
+        id="{{index}}"
+        >
+            {{item.value}}
+        </view>
+    </view>
+    <view class="tabs_content">
+        <slot></slot>
+    </view>
+</view>
