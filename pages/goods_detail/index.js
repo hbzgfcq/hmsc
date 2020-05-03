@@ -1,4 +1,5 @@
 /*
+this 指向页面对象
 1 发送请求获取数据
 2 点击轮播图预览大图
   1 给轮播图绑定点击事件
@@ -20,27 +21,27 @@ Page({
     goodsObj: {}
   },
   GoodsInfo: {},
+  
   onLoad: function (options) {
-    const {
-      goods_id
-    } = options;
+    
+    const { goods_id } = options;
     this.getDetailData(goods_id);
   },
 
   async getDetailData(goods_id) {
-    const goodsObj = await request({
+    const goodsObj = (await request({
       url: '/goods/detail',
       data: {
         goods_id
       }
-    });
-    this.GoodsInfo = goodsObj.data.message;
+    })).data.message;
+    this.GoodsInfo = goodsObj;
     this.setData({
       goodsObj: {
-        goods_name: goodsObj.data.message.goods_name,
-        goods_price: goodsObj.data.message.goods_price,
-        goods_introduce: goodsObj.data.message.goods_introduce.replace(/\.webp/g, '.jpg'),// webp->jpg
-        pics: goodsObj.data.message.pics
+        goods_name: goodsObj.goods_name,
+        goods_price: goodsObj.goods_price,
+        goods_introduce: goodsObj.goods_introduce.replace(/\.webp/g, '.jpg'),// webp->jpg
+        pics: goodsObj.pics
       }
     });
   },
