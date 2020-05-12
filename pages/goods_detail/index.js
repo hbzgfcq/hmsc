@@ -69,6 +69,7 @@ Page({
     if (index === -1) {
       // 3 不存在 第一次添加
       this.GoodsInfo.num = 1;
+      this.GoodsInfo.checked = true;
       cart.push(this.GoodsInfo)
       console.log('添加新商品咯');
     } else {
