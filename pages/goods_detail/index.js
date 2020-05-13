@@ -64,18 +64,18 @@ Page({
     let cart = wx.getStorageSync("cart") || [];
     // 2 判断商品是否存在于购物车数组中
     let index = cart.findIndex(v=>v.goods_id === this.GoodsInfo.goods_id);
-    console.log(index)
-    console.log(this.GoodsInfo)
+    console.log(index);
+    console.log(this.GoodsInfo);
     if (index === -1) {
       // 3 不存在 第一次添加
       this.GoodsInfo.num = 1;
       this.GoodsInfo.checked = true;
-      cart.push(this.GoodsInfo)
+      cart.push(this.GoodsInfo);
       console.log('添加新商品咯');
     } else {
       // 4 存在购物车数据 num++
       cart[index].num++;
-      console.log("商品数量加1")
+      console.log("商品数量加1");
     }
     // 5 购物车回填到缓存中
     wx.setStorageSync("cart", cart);

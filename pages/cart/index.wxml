@@ -24,7 +24,7 @@
         >
             <!-- 复选框 -->
             <view class="cart_chk_wrap">
-                <checkbox-group bind:change="">
+                <checkbox-group bind:change="handleItemChange">
                     <checkbox checked="{{item.checked}}"></checkbox>
                 </checkbox-group>
             </view>
@@ -52,7 +52,7 @@
 <!-- 全选 -->
 <view class="all_chk_wrap">
 <checkbox-group bindchange="">
-    <checkbox>全选</checkbox>
+    <checkbox checked="{{allChecked}}">全选</checkbox>
 </checkbox-group>
 </view>
 <!-- 总价格 -->
