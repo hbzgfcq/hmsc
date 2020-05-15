@@ -9,6 +9,7 @@ page {
 }
 .revice_address_row .user_info_row {
   display: flex;
+  padding: 20rpx;
 }
 .revice_address_row .user_info_row .user_info {
   flex: 5;
