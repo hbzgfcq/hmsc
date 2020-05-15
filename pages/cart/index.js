@@ -51,11 +51,17 @@
     2 "-" "-1"
   2 传递被点击的商品id goods_id
   3 获取data中的购物数组 来获取需要被修改的商品对象
-  4 直接修改商品对象的数组 num
-  5 把cart数组 重新设置回 缓存中 和data中 this.setCart
+  4 当购物车数量=1 同时用户点击"-",弹窗（wx.showModel()）询问用户是否要删除
+    点击确定执行删除，点击取消则什么都不做
+  5 直接修改商品对象的数组 num
+  6 把cart数组 重新设置回 缓存中 和data中 this.setCart
+9 点击结算
+  1 判断有没有收货地址信息
+  2 判断用户有没有选购商品
+  3 通过了跳转到支付页面
 
 */
-import { getSetting, chooseAddress, openSetting } from "../../utils/asyncWX.js"
+import { getSetting, chooseAddress, openSetting, showModel, showToast } from "../../utils/asyncWX.js"
 import regeneratorRuntime from '../../lib/runtime/runtime.js';
 
 Page({
@@ -139,15 +145,44 @@ Page({
 
   },
   // 商品数量的编辑功能
-  handleItemNumEdit(e) {
+  async handleItemNumEdit(e) {
     // 1 获取传递过来的参数
     const { operation, id } = e.currentTarget.dataset;
     // 2 获取购物车数组
     let { cart } = this.data;
     // 3 找到需要修改的商品的索引
     const index = cart.findIndex(v => v.goods_id === id);
-    // 4 进行修改数量
-    cart[index].num += parseInt(operation);
-    this.setCart(cart);
+    // 4 判断是否要进行删除
+    if (cart[index].num === 1 && operation === -1) {
+      // 弹窗提升
+      const res = await showModel({ content: "您是否要删除？" });
+      if (res.confirm) {
+        cart.splice(index, 1);
+        this.setCart(cart);
+      }
+    } else {
+      // 5 进行修改数量
+      cart[index].num += operation;
+      // 6 保存回缓存中和data中
+      this.setCart(cart);
+    }
+  },
+  // 点击 结算
+  async handlePay() {
+    // 1 判断收货地址
+    const { address, totalNum} = this.data;
+    if (!address.userName) {
+      await showToast({title:"您还没有选择收货地址"});
+      return;
+    }
+    // 2 判断用户有没有选择商品
+    if (totalNum===0) {
+      await showToast({title:"您还没有选购商品"});
+      return;
+    }
+    // 3 跳转到支付页面
+    wx.navigateTo({
+      url: '/pages/pay/index'
+    });
   }
 });
