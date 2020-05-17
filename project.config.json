@@ -84,6 +84,20 @@
 					"pathName": "pages/cart/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

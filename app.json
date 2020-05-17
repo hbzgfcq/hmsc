@@ -49,7 +49,7 @@
       },
       {
         "pagePath": "pages/user/index",
-        "text": "主页",
+        "text": "我的",
         "iconPath": "icons/me1.png",
         "selectedIconPath": "icons/me2.png"
       }
