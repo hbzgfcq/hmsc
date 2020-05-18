@@ -98,6 +98,12 @@
 					"pathName": "pages/user/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/index",
+					"scene": null
 				}
 			]
 		}

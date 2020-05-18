@@ -1,6 +1,7 @@
-page{
+page {
     background-color: #edece8;
 }
+
 .user_info_wrap {
     height          : 45vh;
     background-color: var(--themeColor);
@@ -37,58 +38,98 @@ page{
     }
 
     .user_btn {
-        position : absolute;
-        left     : 50%;
-        transform: translateX(-50%);
-        top      : 40%;
-        border: 1rpx solid greenyellow;
-        font-size: 38rpx;
-        padding: 30rpx;
+        position     : absolute;
+        left         : 50%;
+        transform    : translateX(-50%);
+        top          : 40%;
+        border       : 1rpx solid greenyellow;
+        font-size    : 38rpx;
+        padding      : 30rpx;
         border-radius: 10rpx;
     }
 }
 
-.user_content{
+.user_content {
     position: relative;
-    .user_main{
-        position: absolute;
-        width: 90%;
-        left: 50%;
+
+    .user_main {
+        padding-bottom: 100rpx;
+        color:#666;
+        position : absolute;
+        width    : 90%;
+        left     : 50%;
         transform: translateX(-50%);
-        top: -40rpx;
-        .history_wrap{
+        top      : -40rpx;
+
+        .history_wrap {
             background-color: #fff;
-            display: flex;
-            navigator{
-                flex: 1;
+            display         : flex;
+
+            navigator {
+                flex      : 1;
                 text-align: center;
-                padding: 10rpx 0;
-                .his_num{
+                padding   : 10rpx 0;
+
+                .his_num {
                     color: var(--themeColor);
                 }
-                .his_name{}
+
+                .his_name {}
             }
         }
-        .orders_wrap{
+
+        .orders_wrap {
             background-color: #fff;
-            margin-top: 30rpx;
-            .orders_title{
-                padding: 20rpx;
-                border-bottom: 1rpx solid #ccc;               
+            margin-top      : 30rpx;
+
+            .orders_title {
+                padding      : 20rpx;
+                border-bottom: 1rpx solid #ccc;
             }
-            .orders_content{
+
+            .orders_content {
                 display: flex;
+
                 navigator {
-                    flex: 1;
+                    flex      : 1;
                     text-align: center;
-                    padding: 15rpx;
-                    .iconfont{
-                        color: var(--themeColor);
+                    padding   : 15rpx;
+
+                    .iconfont {
+                        color    : var(--themeColor);
                         font-size: 40rpx;
                     }
-                    .order_name{}
+
+                    .order_name {}
                 }
             }
+        }
+
+        .address_wrap {
+            margin-top      : 30rpx;
+            background-color: #fff;
+            padding         : 20rpx;
+        }
+
+        .app_info_wrap {
+            margin-top      : 30rpx;
+            background-color: #fff;
+
+            .app_info_item {
+                padding      : 20rpx;
+                border-bottom: 1rpx solid #000;
+            }
+
+            .app_info_contact {
+                display        : flex;
+                justify-content: space-between;
+            }
+        }
+
+        .recommend_wrap {
+            margin-top      : 30rpx;
+            background-color: #fff;
+            padding         : 20rpx;
         }
     }
 }
