@@ -38,6 +38,12 @@ page {
   align-items: center;
   border-left: 1px solid #000;
 }
+.goods_name_row .goods_collect .icon-wujiaoxingxingxingshoucangdianji {
+  color: var(--themeColor);
+}
+.goods_name_row .goods_collect .icon-shoucang {
+  color: var(--themeColor);
+}
 .goods_info .goods_info_title {
   font-size: 32rpx;
   color: var(--themeColor);
