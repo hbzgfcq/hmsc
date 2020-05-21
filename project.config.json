@@ -73,7 +73,7 @@
 				},
 				{
 					"id": 2,
-					"name": "详情",
+					"name": "detail",
 					"pathName": "pages/goods_detail/index",
 					"query": "goods_id=47868",
 					"scene": null
@@ -103,6 +103,21 @@
 					"id": -1,
 					"name": "order",
 					"pathName": "pages/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "collect",
+					"pathName": "pages/collect/index",
+					"query": "goods_id=47868",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "search",
+					"pathName": "pages/search/index",
+					"query": "goods_id=47868",
 					"scene": null
 				}
 			]
