@@ -1,6 +1,7 @@
 <view class="search_row">
     <input value="{{inputValue}}" placeholder="请输入您要搜索的商品" type="text" bind:input="handleInput"></input>
     <button bind:tap="handleCancel" hidden="{{!isFocus}}">搜索</button>
+    <!-- 组件的显示隐藏也可以用wx:if控制，如果频繁显示隐藏则不适合 -->
 </view>
 <view class="search_content">
     <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" class="search_item" wx:for="{{goods}}" wx:key="goods_id">
